@@ -6,11 +6,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function AlbumsList() {
   const [input, setInput] = useState('');
+
   const [albums, setAlbums] = useState(['static album']);
+  
   const [flag, setFlag] = useState(false);
 
   const handleSaveAlbum = ()=>{
     setAlbums([input, ...albums])
+
+    setInput('');
+
     toast.success(`${input} album is created`, {
       position: "top-right",
       autoClose: 2000,
